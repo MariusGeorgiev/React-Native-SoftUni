@@ -1,0 +1,67 @@
+{
+    "movies": [
+        {
+            "id": 1,
+            "title": "Man of Steel",
+            "year": 2013,
+            "director": "Zack Snyder",
+            "genre": "Action, Sci-Fi",
+            "durationMinutes": 143,
+            "imageUrl": "https://m.media-amazon.com/images/I/61HwMSY89iL.jpg"
+        },
+        {
+            "id": 2,
+            "title": "The Matrix",
+            "year": 1999,
+            "director": "The Wachowskis",
+            "genre": "Action, Sci-Fi",
+            "durationMinutes": 136,
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlHvH0tlGmpwi5iaH0179IFg8YWluiAoTXlQ&s"
+        },
+        {
+            "id": 3,
+            "title": "The Lord of the Rings",
+            "year": 2001,
+            "director": "Peter Jackson",
+            "genre": "Fantasy, Adventure",
+            "durationMinutes": 178,
+            "imageUrl": "https://m.media-amazon.com/images/I/81EBp0vOZZL.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Inception",
+            "year": 2010,
+            "director": "Christopher Nolan",
+            "genre": "Action, Sci-Fi, Thriller",
+            "durationMinutes": 148,
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP61dq7vCE9wiW0Ls3hQ7qzWNBUJJKh33OLQ&s"
+        },
+        {
+            "id": 5,
+            "title": "The Dark Knight",
+            "year": 2008,
+            "director": "Christopher Nolan",
+            "genre": "Action, Crime, Drama",
+            "durationMinutes": 152,
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Interstellar",
+            "year": 2014,
+            "director": "Christopher Nolan",
+            "genre": "Sci-Fi, Drama",
+            "durationMinutes": 169,
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Gladiator",
+            "year": 2000,
+            "director": "Ridley Scott",
+            "genre": "Action, Drama, History",
+            "durationMinutes": 155,
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrURQw9D5TysFfJd5_VcPzC0NPy1DWqKQKQQ&s"
+        }
+    ]
+}
