@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+
+import data from './data.json';
+import MovieList from './components/MovieList';
+import MovieDetails from './components/MovieDetails';
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
+  const movePressHandler = (movieId) => {
+    const movie = data.movies.find(movie => movie.id === movieId);
+    setSelectedMovie(movie);
+  };
+
+  const closeDetailsHandler = () => {
+    setSelectedMovie(null);
+  }
+
+  return selectedMovie
+    ? <MovieDetails movie={selectedMovie} onClose={closeDetailsHandler} />
+    : <MovieList movies={data.movies} moviePressHandler={movePressHandler} />
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
