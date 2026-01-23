@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import {  Text, View, TextInput, Button } from 'react-native';
+import TodoItem from './components/Todoitem';
 
 export default function App() {
 
@@ -8,7 +9,6 @@ export default function App() {
   const [todos, setTodos] = useState([])
 
   const textChangeHandler = (value) => {
-    
     setText(value);
   };
 
@@ -16,7 +16,10 @@ export default function App() {
 
     if (!text) return alert('Missing Todo text!');
 
+    const lastTodoId = todos[todos.length - 1]?.id || 0
+
     const newTodo = {
+      id: lastTodoId + 1,
       text,
       isCompleted: false,
     };
@@ -24,6 +27,10 @@ export default function App() {
     setTodos(oldTodos => [...oldTodos, newTodo]);
 
     setText('');
+  }
+
+  const toggleTodoHandler = (todoId) => {
+    alert(todoId)
   }
 
   return (
@@ -43,9 +50,9 @@ export default function App() {
         <Button title='Create' onPress={createTodoHandler} />
       </View>
       
-      <View>
-        <Text>View</Text>
-        </View>
+      <View style={{width: '100%'}}>
+        {todos.map(todo => <TodoItem key={todo.id} {...todo} onDone={toggleTodoHandler} />)}
+      </View>
 
     </View>
   );
