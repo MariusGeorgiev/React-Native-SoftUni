@@ -30,7 +30,7 @@ export default function App() {
   }
 
   const toggleTodoHandler = (todoId) => {
-    alert(todoId)
+    setTodos(todos => todos.map(todo => todo.id === todoId ? {...todo, isCompleted: !todo.isCompleted } : todo ))
   }
 
   return (
