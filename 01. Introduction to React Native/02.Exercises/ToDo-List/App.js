@@ -1,14 +1,38 @@
-import {  Text, View } from 'react-native';
+import { useState } from 'react';
+import {  Text, View, TextInput, Button } from 'react-native';
 
 export default function App() {
+
+  const [text, setText] = useState('')
+
+  const textChangeHandler = (value) => {
+    
+    setText(value);
+  };
+
+  const createTodoHandler = () => {
+    alert(text)
+  }
+
   return (
     <View style={styles.body}>
       
-      <View><Text>Todo list</Text></View>
+      <View>
+        <Text style={styles.heading}>Todo list</Text>
+        </View>
       
-      <View><Text>Creation</Text></View>
+      <View style={styles.control}>
+        <TextInput 
+          placeholder='Go to the gym!'
+          value={text}
+          onChangeText={textChangeHandler}
+        />
+        <Button title='Create' onPress={createTodoHandler} />
+      </View>
       
-      <View><Text>View</Text></View>
+      <View>
+        <Text>View</Text>
+        </View>
 
     </View>
   );
@@ -16,7 +40,24 @@ export default function App() {
 
 const styles = {
   body: {
-    padding:40,
+    padding:20,
     alignItems: 'center',
+
+  },
+  heading: {
+    fontSize: 30,
+    marginTop: 30,
+    fontWeigh: 'bold',
+
+  },
+
+  control: {
+    flexDirection: 'row',
+    borderWidth : 1,
+    justifyContent: 'space-between',
+    width: '100%',
+    borderRadius: 5,
   }
+
+
 }
