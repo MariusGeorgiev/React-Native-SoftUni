@@ -8,10 +8,10 @@ export default function TodoItem({
 }) {
     return (
         <View style={{flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={{fontSize: 20, }}>{text}</Text>
+            <Text style={{fontSize: 20, textDecorationLine: isCompleted ? 'line-through' : 'none' }}>{text}</Text>
 
             <View style={{flexDirection: 'row', gap: 5}}>
-                <Button title="Done" onPress={() => onDone(id)}/>
+                <Button title={isCompleted ? 'Undone' : 'Done'} onPress={() => onDone(id)}/>
                 <Button title="Delete" />
             </View>
             
