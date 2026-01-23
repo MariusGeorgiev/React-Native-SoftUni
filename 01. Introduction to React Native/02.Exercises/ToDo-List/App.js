@@ -5,13 +5,25 @@ export default function App() {
 
   const [text, setText] = useState('')
 
+  const [todos, setTodos] = useState([])
+
   const textChangeHandler = (value) => {
     
     setText(value);
   };
 
   const createTodoHandler = () => {
-    alert(text)
+
+    if (!text) return alert('Missing Todo text!');
+
+    const newTodo = {
+      text,
+      isCompleted: false,
+    };
+
+    setTodos(oldTodos => [...oldTodos, newTodo]);
+
+    setText('');
   }
 
   return (
@@ -42,6 +54,7 @@ const styles = {
   body: {
     padding:20,
     alignItems: 'center',
+    gap: 30,
 
   },
   heading: {
@@ -53,11 +66,12 @@ const styles = {
 
   control: {
     flexDirection: 'row',
-    borderWidth : 1,
+    borderWidth: 1,
     justifyContent: 'space-between',
     width: '100%',
     borderRadius: 5,
-  }
+
+  },
 
 
 }
