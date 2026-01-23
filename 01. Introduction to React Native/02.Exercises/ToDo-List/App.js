@@ -38,6 +38,7 @@ export default function App() {
           placeholder='Go to the gym!'
           value={text}
           onChangeText={textChangeHandler}
+          onSubmitEditing={createTodoHandler}
         />
         <Button title='Create' onPress={createTodoHandler} />
       </View>
