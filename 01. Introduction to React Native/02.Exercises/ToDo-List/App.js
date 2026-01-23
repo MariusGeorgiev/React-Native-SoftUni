@@ -1,13 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {  Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.body}>
+      
+      <View><Text>Todo list</Text></View>
+      
+      <View><Text>Creation</Text></View>
+      
+      <View><Text>View</Text></View>
+
     </View>
   );
 }
 
-
+const styles = {
+  body: {
+    padding:40,
+    alignItems: 'center',
+  }
+}
