@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { Home, Plus } from 'lucide-react-native'
 
 export default function App() {
   return (
@@ -10,7 +11,7 @@ export default function App() {
         
 
           {/* Header */}
-          <View style={[styles.section, styles.header]}>
+          <View style={[styles.endSection, styles.header]}>
             <Text style={styles.heading}>Calorie Tracker</Text>
           </View>
 
@@ -25,8 +26,9 @@ export default function App() {
           </View>
 
           {/* App Bar */}
-          <View >
-            <Text>App Bar</Text>
+          <View style={styles.endSection}>
+            <Home />
+            <Plus />
           </View>
 
         <StatusBar style="auto" />
@@ -60,10 +62,21 @@ const styles = StyleSheet.create({
   header: {
 
   },
-  
+
   heading: {
     textAlign: 'center',
     fontSize: 26,
     fontWeight: 'bold',
+  },
+
+  endSection: {
+    width: '100%',
+    backgroundColor: colors.white,
+    borderWidth: 1,
+    borderColor: '#edf2f7',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    paddingVertical: 20,
+
   }
 });
