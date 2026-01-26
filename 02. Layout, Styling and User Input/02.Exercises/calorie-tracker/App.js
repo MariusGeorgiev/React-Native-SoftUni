@@ -40,7 +40,7 @@ export default function App() {
           {/* App Bar */}
           <View style={styles.endSection}>
             <Home />
-            <TouchableOpacity>
+            <TouchableOpacity onPress={addMealPressHandler}>
               <View style={{ width: 10, height: 10}}>
                 <Plus />
               </View>
