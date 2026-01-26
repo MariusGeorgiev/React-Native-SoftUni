@@ -10,10 +10,15 @@ import { useState } from 'react';
 export default function App() {
 
   const [showAddMeal, setShowAddMeal] = useState(false);
+  const [meals, setMeals] = useState([])
 
   const addMealPressHandler = () => {
     setShowAddMeal(true);
   };
+
+  const createMealHandler = (meal) => {
+    setMeals(state => [...state, meal]);
+  }
 
   return (
 
@@ -35,7 +40,7 @@ export default function App() {
          <MealSection onAddMeal={addMealPressHandler}/>
 
          {/* Add meal modal */}
-         { showAddMeal && <AddMeal onClose={() => setShowAddMeal(false)} />}
+         { showAddMeal && <AddMeal onClose={() => setShowAddMeal(false)} onCreate={createMealHandler} />}
 
           {/* App Bar */}
           <View style={styles.endSection}>
