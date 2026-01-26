@@ -15,9 +15,10 @@ export default function AddMeal({
     const addPressHandler = () => {
         // Create new meal object
         const newMeal = { 
-            id: uuid.v4,
+            id: uuid.v4(),
             name, 
-            calories: Number(calories) };
+            calories: Number(calories) 
+        };
 
         // submit new meal to perent
         onCreate(newMeal);
