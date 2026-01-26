@@ -5,6 +5,7 @@ import MealCard from "../meal-card/MealCard";
 
 export default function MealSection({
     onAddMeal,
+    onDeleteMeal,
     meals,
     totalCalories,
 }) {
@@ -25,7 +26,7 @@ export default function MealSection({
             </View>
 
             <View style={{gap: 10}}> 
-                {meals.map((meal, index) => <MealCard key={index} {...meal} /> )}
+                {meals.map((meal, index) => <MealCard key={index} {...meal} onDelete={onDeleteMeal} /> )}
             </View>
 
         </View>

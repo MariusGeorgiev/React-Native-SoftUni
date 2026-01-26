@@ -22,6 +22,10 @@ export default function App() {
     setMeals(state => [...state, meal]);
   }
 
+  const deleteMealHandler = (mealId) => {
+    setMeals(oldMeals => oldMeals.filter(meal => meal.id !== mealId))
+  }
+
   return (
 
     <SafeAreaProvider> 
@@ -39,7 +43,12 @@ export default function App() {
           </View>
 
           {/* Meal Section */}
-         <MealSection onAddMeal={addMealPressHandler} meals={meals} totalCalories={totalCalories} />
+         <MealSection 
+         onAddMeal={addMealPressHandler} 
+         meals={meals} 
+         totalCalories={totalCalories}
+         onDeleteMeal={deleteMealHandler}
+         />
 
          {/* Add meal modal */}
          { showAddMeal && <AddMeal onClose={() => setShowAddMeal(false)} onCreate={createMealHandler} />}
