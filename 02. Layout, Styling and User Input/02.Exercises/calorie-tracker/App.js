@@ -6,6 +6,7 @@ import { styles } from "./styles";
 import MealSection from './components/meal-section/MealSection';
 import AddMeal from './components/add-meal/AddMeal';
 import { useMemo, useState } from 'react';
+import Slider from '@react-native-community/slider'
 
 export default function App() {
 
@@ -22,7 +23,7 @@ export default function App() {
     setMeals(state => [...state, meal]);
   }
 
-  const deleteMealHandler = (mealId) => {
+   const deleteMealHandler = (mealId) => {
     setMeals(oldMeals => oldMeals.filter(meal => meal.id !== mealId))
   }
 
@@ -31,7 +32,6 @@ export default function App() {
     <SafeAreaProvider> 
       <SafeAreaView style={styles.container}>
         
-
           {/* Header */}
           <View style={[styles.endSection, styles.header]}>
             <Text style={styles.heading}>Calorie Tracker</Text>
@@ -40,6 +40,15 @@ export default function App() {
           {/* Overview  */}
           <View style={styles.section}>
             <Text>Calorie Overview</Text>
+            <Slider
+              style={{ width: 200, height: 40 }}
+              minimumValue={0}
+              maximumValue={3000}
+              minimumTrackTintColor="#FFFFFF"
+              maximumTrackTintColor="#000000"
+              disabled
+              value={totalCalories}
+            />
           </View>
 
           {/* Meal Section */}
@@ -51,15 +60,16 @@ export default function App() {
          />
 
          {/* Add meal modal */}
-         { showAddMeal && <AddMeal onClose={() => setShowAddMeal(false)} onCreate={createMealHandler} />}
+         { showAddMeal && <AddMeal 
+            onClose={() => setShowAddMeal(false)} 
+            onCreate={createMealHandler} 
+          />}
 
           {/* App Bar */}
           <View style={styles.endSection}>
             <Home />
             <TouchableOpacity onPress={addMealPressHandler}>
-              <View style={{ width: 10, height: 10}}>
                 <Plus />
-              </View>
             </TouchableOpacity> 
           </View>
 

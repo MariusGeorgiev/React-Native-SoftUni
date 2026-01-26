@@ -11,11 +11,11 @@ export default function MealSection({
 }) {
     return (
         
-        <View style={[styles.section, styles.mealSection]}>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20,}} >
+        <View style={[styles.section]}>
+            <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20}} >
 
                 <View> 
-                    <Text style={{fontWeight: 'bold', fontSize: 20,}}>Meals</Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 20}}>Meals</Text>
                     <Text>{totalCalories} cal</Text>
                 </View>
 

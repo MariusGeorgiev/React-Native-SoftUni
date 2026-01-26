@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native'
-import MealSection from './components/meal-section/MealSection';
 
 export const colors = {
   white: '#fff',

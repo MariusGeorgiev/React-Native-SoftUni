@@ -27,7 +27,7 @@ export default function MealCard({
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#e0e0e0',
+        backgroundColor: '#efefef',
         borderRadius: 5,
         padding: 10,
         flexDirection: 'row',

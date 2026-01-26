@@ -32,8 +32,7 @@ export default function AddMeal({
     return (
         <Modal
             onRequestClose={onClose}
-            transparent
-            
+            transparent 
         > 
             <View style={styles.overlay}>
 
