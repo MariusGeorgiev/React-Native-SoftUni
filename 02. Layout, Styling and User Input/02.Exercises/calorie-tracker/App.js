@@ -10,7 +10,9 @@ import { useState } from 'react';
 export default function App() {
 
   const [showAddMeal, setShowAddMeal] = useState(false);
-  const [meals, setMeals] = useState([])
+  const [meals, setMeals] = useState([]);
+
+  const totalCalories = meals.reduce((acc, meal ) =>  acc + meal.calories, 0);
 
   const addMealPressHandler = () => {
     setShowAddMeal(true);
@@ -37,7 +39,7 @@ export default function App() {
           </View>
 
           {/* Meal Section */}
-         <MealSection onAddMeal={addMealPressHandler}/>
+         <MealSection onAddMeal={addMealPressHandler} meals={meals} totalCalories={totalCalories} />
 
          {/* Add meal modal */}
          { showAddMeal && <AddMeal onClose={() => setShowAddMeal(false)} onCreate={createMealHandler} />}
