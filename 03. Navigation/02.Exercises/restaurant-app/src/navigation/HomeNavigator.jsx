@@ -7,6 +7,7 @@ import DetailsScreen from '../screens/DetailsScreen';
 export default function HomeNavigator() {
 
     const Stack = createNativeStackNavigator();
+    
     return (
         <Stack.Navigator>
             <Stack.Screen name='Home' component={HomeScreen} />
