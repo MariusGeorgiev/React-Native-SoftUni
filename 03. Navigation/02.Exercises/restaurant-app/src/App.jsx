@@ -5,16 +5,12 @@ import { NavigationContainer } from '@react-navigation/native'
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-
- <NavigationContainer>
-      <StatusBar style="auto" />
-
-      {/* <SafeAreaView> */}
-        <RootNavigator />
-      {/* </SafeAreaView> */}
-</NavigationContainer>
-    </SafeAreaProvider> 
+        <NavigationContainer>
+              <StatusBar style="auto" />
+              {/* <SafeAreaView> */}
+                <RootNavigator />
+              {/* </SafeAreaView> */}
+        </NavigationContainer> 
   );
 }
 
