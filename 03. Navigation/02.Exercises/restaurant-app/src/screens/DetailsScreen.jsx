@@ -1,9 +1,10 @@
 import { ScrollView, StyleSheet, Image, Text, View, Button } from 'react-native';
 import { getItemById } from '../data/menuItems';
 
-
-
-export default function DetailsScreen({ route }) {
+export default function DetailsScreen({ 
+    route, 
+    navigation 
+}) {
 
   const { itemId } = route.params;
 
@@ -41,16 +42,16 @@ export default function DetailsScreen({ route }) {
                     </View>
                     <View style={styles.footerButtons}>
                         <Button
-                            title='Add to Card'
+                            title='Add to Cart'
                             style={styles.addButton}
                             // todo add onPress handler
                         />
                         <Button
-                            title='View Card'
+                            title='View Cart'
                             variant="outline"
                             style={styles.viewCartButton}
                             // todo add onPress handler
-                            onPress={() => navigation.navigate('Card')}
+                            onPress={() => navigation.navigate('Cart')}
                         />
 
                     </View>
