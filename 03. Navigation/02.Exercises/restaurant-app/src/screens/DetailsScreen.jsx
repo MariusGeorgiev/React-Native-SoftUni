@@ -25,18 +25,20 @@ export default function DetailsScreen({ route }) {
 
                     <View style={styles.divider} />
 
+                    {/* Extra selector */}
+
                     <View style={styles.qtySection}>
                         <Text style={styles.qtyLabel}>Quantity</Text>
                         <Text>- 1 +</Text>
                     </View>
                 </View>
 
-                <View>
-                    <View>
-                        <Text></Text>
-                        <Text></Text>
+                <View style={styles.footer}>
+                    <View style={styles.priceContainer}>
+                        <Text style={styles.totalLabel}>Total:</Text>
+                        <Text style={styles.totalPrice}>${item.price.toFixed(2)}</Text>
                     </View>
-                    <View>
+                    <View >
                         <Button
                             title='Add to Card'
 
