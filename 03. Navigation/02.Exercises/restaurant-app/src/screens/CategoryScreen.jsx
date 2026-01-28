@@ -9,7 +9,7 @@ export default function CategoryScreen({ route, navigation }) {
 
   const items = getItemsByCategory(categoryId);
   
-  const itemPressHandler = (itemId) => {
+  const itemPressedHandler = (itemId) => {
     navigation.navigate('Details', { itemId });
   }
 
@@ -19,7 +19,7 @@ export default function CategoryScreen({ route, navigation }) {
                 <Card
                     key={item.id}
                     {...item}
-                    onPress={itemPressHandler} 
+                    onPress={itemPressedHandler} 
                 />
             ))}
         </ScrollView>

@@ -15,8 +15,14 @@ export default function RootNavigator() {
                     component={HomeNavigator} 
                     options={{ headerShown: false }}
                 />
-                <Tabs.Screen name='Card' component={CardScreen} />
-                <Tabs.Screen name='Info' component={InfoScreen} />
+                <Tabs.Screen 
+                    name='Card' 
+                    component={CardScreen} 
+                />
+                <Tabs.Screen 
+                    name='Info' 
+                    component={InfoScreen} 
+                />
             </Tabs.Navigator>
     );
 }
