@@ -15,6 +15,7 @@ export default function HomeScreen({ navigation }) {
     const itemPressHandler = (itemId) => {
         navigation.navigate('Details', { itemId });
     }
+    
     return (
       <ScrollView>
 
