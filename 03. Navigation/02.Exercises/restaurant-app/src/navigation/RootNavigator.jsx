@@ -1,17 +1,16 @@
-// import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeNavigator from './HomeNavigator';
+import InfoScreen from '../screens/InfoScreen';
 
 export default function RootNavigator() {
 
     const Tabs = createBottomTabNavigator();
 
     return (
-        // <NavigationContainer>
             <Tabs.Navigator>
-                <Tabs.Screen name='HomeTab' component={HomeNavigator}/>
+                <Tabs.Screen name='HomeTab' component={HomeNavigator} options={{ headerShown: false }}/>
+                <Tabs.Screen name='Info' component={InfoScreen} />
             </Tabs.Navigator>
-        // </NavigationContainer>
     );
 }
