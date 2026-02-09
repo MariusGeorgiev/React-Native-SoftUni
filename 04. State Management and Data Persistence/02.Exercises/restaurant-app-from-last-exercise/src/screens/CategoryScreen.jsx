@@ -1,25 +1,36 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { getItemsByCategory } from '../data/menuItems';
-import Card from '../components/Card';
-
+import { StyleSheet, ScrollView } from "react-native";
+import { getItemsByCategory } from "../data/menuItems";
+import Card from "../components/Card";
+import { useEffect, useState } from "react";
+import { mealApi } from "../api";
 
 export default function CategoryScreen({ route, navigation }) {
+    const { categoryId } = route.params;
+    const [meals, setMeals] = useState([]);
 
-  const { categoryId } = route.params;
+    useEffect(() => {
+        mealApi.getAllByCategoryId(categoryId)
+            .then(result => {
+                setMeals(result.data);
+            })
+            .catch(err => {
+                alert('Cannot fetch meals');
+            });
+    }, [categoryId]);
 
-  const items = getItemsByCategory(categoryId);
-  
-  const itemPressedHandler = (itemId) => {
-    navigation.navigate('Details', { itemId });
-  }
+    const items = getItemsByCategory(categoryId);
+
+    const itemPressedHandler = (mealId) => {
+        navigation.navigate('Details', { itemId: mealId });
+    };
 
     return (
         <ScrollView style={styles.container}>
-            {items.map((item) => (
+            {meals.map((meal) => (
                 <Card
-                    key={item.id}
-                    {...item}
-                    onPress={itemPressedHandler} 
+                    key={meal.id}
+                    {...meal}
+                    onPress={itemPressedHandler}
                 />
             ))}
         </ScrollView>
