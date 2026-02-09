@@ -1,29 +1,51 @@
-import { ScrollView, StyleSheet, Image, Text, View, Button } from 'react-native';
-import { getItemById } from '../data/menuItems';
+import { useEffect, useState } from "react";
+import { ScrollView, Text, View, Image, StyleSheet } from "react-native";
 
-export default function DetailsScreen({ 
-    route, 
-    navigation 
+import Button from "../components/Button";
+import QuantityStepper from "../components/QuantityStepper";
+import { mealApi } from "../api";
+import { useCartContext } from "../contexts/cart/CartContext";
+
+export default function DetailsScreen({
+    route,
+    navigation,
 }) {
+    const [quantity, setQuantity] = useState(1);
+    const [meal, setMeal] = useState(null);
+    const { addToCart } = useCartContext();
+    const { itemId } = route.params;
 
-  const { itemId } = route.params;
+    useEffect(() => {
+        mealApi.getOne(itemId)
+            .then(res => {
+                setMeal(res.data);
+            })
+            .catch(err => {
+                console.error('Error fetching meal details:', err);
+            });
+    }, [itemId]);
 
-  const item = getItemById(itemId);
+    const addToCartHandler = () => {
+        addToCart(meal, quantity);
+
+        setQuantity(1);
+
+        alert('Item added to cart!');
+    };
 
     return (
         <View style={styles.container}>
             <ScrollView>
-
                 <Image
-                    source={{ uri: item.imageUrl }}
+                    source={{ uri: meal?.imageUrl }}
                     style={styles.image}
-                    resizeMode='cover'
+                    resizeMode="cover"
                 />
 
                 <View style={styles.content}>
-                    <Text style={styles.name}>{item.name}</Text>
-                    <Text style={styles.description}>{item.description}</Text>
-                    <Text style={styles.basePrice}>Base price: ${item.price.toFixed(2)}</Text>
+                    <Text style={styles.name}>{meal?.name}</Text>
+                    <Text style={styles.description}>{meal?.description}</Text>
+                    <Text style={styles.basePrice}>Base price: ${meal?.price?.toFixed(2)}</Text>
 
                     <View style={styles.divider} />
 
@@ -31,32 +53,34 @@ export default function DetailsScreen({
 
                     <View style={styles.qtySection}>
                         <Text style={styles.qtyLabel}>Quantity</Text>
-                        <Text>- 1 +</Text>
+                        <QuantityStepper
+                            qty={quantity}
+                            onIncrement={() => setQuantity(quantity + 1)}
+                            onDecrement={() => setQuantity(quantity - 1)}
+                        />
                     </View>
                 </View>
 
                 <View style={styles.footer}>
                     <View style={styles.priceContainer}>
                         <Text style={styles.totalLabel}>Total:</Text>
-                        <Text style={styles.totalPrice}>${item.price.toFixed(2)}</Text>
+                        <Text style={styles.totalPrice}>${meal?.price && (meal?.price * quantity).toFixed(2)}</Text>
                     </View>
                     <View style={styles.footerButtons}>
                         <Button
-                            title='Add to Cart'
+                            title="Add to Cart"
                             style={styles.addButton}
-                            // todo add onPress handler
+                            onPress={addToCartHandler}
                         />
                         <Button
-                            title='View Cart'
+                            title="View Cart"
                             variant="outline"
                             style={styles.viewCartButton}
                             // todo add onPress handler
-                            onPress={() => navigation.navigate('Cart')}
+                            onPress={() => navigation.navigate('CartModal')}
                         />
-
                     </View>
                 </View>
-
             </ScrollView>
         </View>
     );
