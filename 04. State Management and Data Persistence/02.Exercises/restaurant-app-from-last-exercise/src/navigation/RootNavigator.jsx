@@ -1,42 +1,35 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-import HomeNavigator from './HomeNavigator';
-import InfoScreen from '../screens/InfoScreen';
-import CartScreen from '../screens/CartScreen';
-import { Ionicons } from "@expo/vector-icons";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import TabNavigator from "./TabNavigator";
+import CartScreen from "../screens/CartScreen";
+import CheckoutScreen from "../screens/CheckoutScreen";
 
 export default function RootNavigator() {
-
-    const Tabs = createBottomTabNavigator();
+    const Stack = createNativeStackNavigator();
 
     return (
-            <Tabs.Navigator
-                screenOptions={{}}
-            >
-                <Tabs.Screen 
-                    name='HomeTab' 
-                    component={HomeNavigator} 
-                    options={{
-                        title: "Home",
-                        tabBarIcon: ({ color, size}) =><Ionicons name="home" size={size} color={color} />,
-                        headerShown: false 
-                    }}
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="TabNavigator" component={TabNavigator} />
+            <Stack.Screen
+                name="CartModal"
+                component={CartScreen}
+                options={{
+                    presentation: 'modal',
+                    headerShown: true,
+                    title: 'Cart',
+                    animation: 'slide_from_right'
+                }}
+            />
 
-                />
-                <Tabs.Screen 
-                    name='Cart' 
-                    component={CartScreen}
-                    options={{
-                        tabBarIcon: ({ color, size}) =><Ionicons name="cart" size={size} color={color} />
-                    }}
-                />
-                <Tabs.Screen 
-                    name='Info' 
-                    component={InfoScreen}
-                    options={{
-                        tabBarIcon: ({ color, size}) =><Ionicons name="information-circle" size={size} color={color} />
-                    }}
-                />
-            </Tabs.Navigator>
+            <Stack.Screen
+                name="CheckoutModal"
+                component={CheckoutScreen}
+                options={{
+                    presentation: 'modal',
+                    headerShown: true,
+                    title: 'Checkout',
+                    animation: 'slide_from_right'
+                }}
+            />
+        </Stack.Navigator>
     );
 }
