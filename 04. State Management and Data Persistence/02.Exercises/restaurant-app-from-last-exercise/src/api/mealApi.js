@@ -12,3 +12,14 @@ export function getOne(mealId) {
     return api.get(`/meals/${mealId}`);
 }
 
+export function getAllByCategoryId(categoryId) {
+    if (!categoryId) {
+        throw new Error('no Category provided!');
+    }
+    
+    return api.get(`/meals?categoryId=${categoryId}`);
+}
+
+export function getFeatured() {
+    return api.get('/meals?featured=true');
+}
