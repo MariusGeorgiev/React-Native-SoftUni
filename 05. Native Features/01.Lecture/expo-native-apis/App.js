@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Share, Button } from 'react-native';
+import ClipboardDemo from './components/Clipboard.jsx';
 
 export default function App() {
   return (
@@ -8,6 +9,7 @@ export default function App() {
       <Text>Native Features</Text>
       <Button title="Share" onPress={() => Share.share({ url: "https://example.com" })} />
 
+      <ClipboardDemo />
 
     </View>
   );
