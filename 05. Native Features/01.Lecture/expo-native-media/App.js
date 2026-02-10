@@ -2,14 +2,25 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import CameraDemo from './screens/CameraDemo.jsx';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 
-      <CameraDemo />
+export default function App() {
+
+  const Drawer = createDrawerNavigator();
+
+  return (
+
+    <NavigationContainer>
       <StatusBar style="auto" />
-    </View>
+
+      <Drawer.Navigator>
+        <Drawer.Screen name="Camera" component={CameraDemo} />
+        
+      </Drawer.Navigator>
+
+    </NavigationContainer>
+    
   );
 }
 
