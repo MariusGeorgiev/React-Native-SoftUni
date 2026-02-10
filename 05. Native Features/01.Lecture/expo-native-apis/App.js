@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Share, Button } from 'react-native';
 import ClipboardDemo from './components/Clipboard.jsx';
+import HapticsDemo from './components/HapticsDemo.jsx';
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
 
       <ClipboardDemo />
 
+      <HapticsDemo />
     </View>
   );
 }
