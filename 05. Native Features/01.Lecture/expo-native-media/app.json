@@ -24,6 +24,22 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Camera is needed to take awesome pictures!"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Camera access is required to take photos.",
+          "photosPermission": "The app needs access to your photos to select images."
+        }
+      ],
+      "expo-document-picker"
+    ]
   }
 }
