@@ -5,6 +5,7 @@ import ImagePickerCameraDemo from './screens/ImagePickerCameraDemo.jsx';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import ImagePicker from './screens/ImagePicker.jsx';
+import DocumentPicker from './screens/DocumentPicker.jsx';
 
 export default function App() {
 
@@ -19,6 +20,7 @@ export default function App() {
         <Drawer.Screen name="Camera" component={CameraDemo} />
         <Drawer.Screen name="ImagePickerCamera" component={ImagePickerCameraDemo} options={{ title: 'ImagePicker Camera' }} />
         <Drawer.Screen name="ImagePicker" component={ImagePicker} options={{ title: 'Image Picker' }} />
+        <Drawer.Screen name="DocumentPicker" component={DocumentPicker} options={{ title: 'Document Picker' }} />
 
       </Drawer.Navigator>
 
