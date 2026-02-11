@@ -11,6 +11,8 @@ export default function App() {
   const [altitude, setAltitude] = useState(null);
   const [altitudeAccuracy, setAltitudeAccuracy] = useState(null);
   const [timestampAt, setTimestampAt] = useState(null);
+  const [latitude, setLatitude] = useState(null);
+  const [longitude, setLongitude] = useState(null);
 
   if (!status) {
     return <ActivityIndicator />;
@@ -33,6 +35,8 @@ export default function App() {
       setAltitude(null);
       setAltitudeAccuracy(null);
       setTimestampAt(null);
+      setLatitude(null);
+      setLongitude(null);
       
 
       const location = await getCurrentPositionAsync({ accuracy: LocationAccuracy.BestForNavigation });
@@ -45,28 +49,30 @@ export default function App() {
       if (address.length > 0) {
         const a = address[0];
 
-        setAddress(
-          `${a.street || ''} ${a.streetNumber || ''}, ${a.postalCode} ${a.city}, ${a.country}`
+        setTimestampAt(
+          new Date(location.timestamp)
         );
 
         setAddressAccuracy(
           `+/- ${(location.coords.accuracy).toFixed(2)} m.`
         );
 
-        setAltitude(
-          `${(location.coords.altitude).toFixed(1)} m.`
+        setAddress(
+          `${a.street || ''} ${a.streetNumber || ''}, ${a.postalCode} ${a.city}, ${a.country}`
         );
 
         setAltitudeAccuracy(
           location.coords.altitudeAccuracy != null
             ? `+/- ${location.coords.altitudeAccuracy.toFixed(1)} m.`
             : 'Altitude accuracy unavailable'
-        )
+        );
 
-        setTimestampAt(
-          new Date(location.timestamp)
-        )
+        setAltitude(
+          `${(location.coords.altitude).toFixed(1)} m.`
+        );
 
+        setLatitude(location.coords.latitude.toFixed(5));
+        setLongitude(location.coords.longitude.toFixed(5));
       };
 
   
@@ -94,9 +100,8 @@ export default function App() {
               <Text style={{ color: 'green', textAlign: 'center', fontSize: 16}}>Altitude: {altitude}</Text>
               <Text style={{ marginTop: 15, textAlign: 'center', fontSize: 16}}>📍</Text>
               <Text style={{ color: 'red', marginTop: 3, textAlign: 'center', fontSize: 16}}>{addressAccuracy}</Text>
-              <Text style={{ color: 'red', marginTop: 3, textAlign: 'center', fontSize: 16}}>
-                {address}
-              </Text>
+              <Text style={{ color: 'red', marginTop: 3, textAlign: 'center', fontSize: 16}}>{address}</Text>
+              <Text style={{ marginTop: 10, textAlign: 'center', fontSize: 16 }}>🌐 Lat: {latitude}, Lng: {longitude}</Text>
             </View>
           )}
     </View>
