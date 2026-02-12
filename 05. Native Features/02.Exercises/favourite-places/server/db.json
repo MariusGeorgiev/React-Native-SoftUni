@@ -1,22 +1,16 @@
 {
   "users": [
     {
-      "email": "ivo@abv.bg",
-      "password": "$2a$10$Ni5wlfs9d1NGXRDkkO6K/.nCiARWmoP/s93sfVuchQCDjJFnoL33S",
-      "name": "Ivo",
-      "id": 1
-    },
-    {
-      "email": "demo@example.com",
-      "password": "$2a$10$kSM4oC1zHxNNn49VyUiIuedPbBgJ2yGLrRkt/TFhxYyMYid/Q5PA.",
-      "name": "Demo User",
-      "id": 2
-    },
-    {
       "email": "peaho@abv.bg",
       "password": "$2a$10$27NwxB2.U39Dca7qQ8Hr8OlCTSmvISxKwl1BT12gtTCtAK.PJYzd2",
       "name": "Peaho",
       "id": 3
+    },
+    {
+      "email": "ivo@abv.bg",
+      "password": "$2a$10$/.Cpu1uhEzWk8if12wMcKux2tdj6QlaIGSh01wnkJ0JN1DNZWAUWG",
+      "name": "Ivo",
+      "id": 4
     }
   ],
   "places": [
