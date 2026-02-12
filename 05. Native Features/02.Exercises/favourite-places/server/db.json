@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "email": "ivo@abv.bg",
+      "password": "$2a$10$Ni5wlfs9d1NGXRDkkO6K/.nCiARWmoP/s93sfVuchQCDjJFnoL33S",
+      "name": "Ivo",
+      "id": 1
+    },
+    {
+      "email": "demo@example.com",
+      "password": "$2a$10$kSM4oC1zHxNNn49VyUiIuedPbBgJ2yGLrRkt/TFhxYyMYid/Q5PA.",
+      "name": "Demo User",
+      "id": 2
+    },
+    {
+      "email": "peaho@abv.bg",
+      "password": "$2a$10$27NwxB2.U39Dca7qQ8Hr8OlCTSmvISxKwl1BT12gtTCtAK.PJYzd2",
+      "name": "Peaho",
+      "id": 3
+    }
+  ],
+  "places": [
+    {
+      "title": "test",
+      "description": "gagaga",
+      "id": 1
+    },
+    {
+      "title": "tteat2",
+      "description": "jsjshjs",
+      "id": 2
+    },
+    {
+      "title": "nznsh",
+      "description": "whhshsj",
+      "id": 3
+    },
+    {
+      "title": "photo",
+      "description": "hahahahah",
+      "imageUri": "file:///data/user/0/host.exp.exponent/cache/ImagePicker/4036259b-853a-4e03-ad43-72609d9bdb09.jpeg",
+      "id": 4
+    },
+    {
+      "title": "me",
+      "description": "gagag",
+      "imageUri": "file:///data/user/0/host.exp.exponent/cache/ImagePicker/981b4e37-064e-4094-89cc-23485c992379.jpeg",
+      "id": 5
+    },
+    {
+      "title": "asdhs",
+      "description": "baba",
+      "imageUri": "file:///var/mobile/Containers/Data/Application/7F965A13-02E9-4639-B44C-343CA4B66E49/Library/Caches/ExponentExperienceData/@anonymous/softuni-react-native-favourite-places-jan-2026-0fc5b575-e9aa-4366-afce-8ccd2575a082/ImagePicker/242AA800-CB26-4753-A93D-0B71AA5AE966.jpg",
+      "id": 6
+    },
+    {
+      "title": "teat",
+      "description": "jajaja",
+      "imageUri": "file:///data/user/0/host.exp.exponent/cache/ImagePicker/b308c039-7d3c-4641-9b45-5d4d4f843773.jpeg",
+      "address": "10, ulitsa \"Professor Petar Nikov\", Sofia, Sofia City Province, Bulgaria",
+      "id": 7
+    }
+  ]
+}
