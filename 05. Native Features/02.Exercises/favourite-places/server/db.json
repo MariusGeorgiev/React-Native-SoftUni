@@ -11,6 +11,12 @@
       "password": "$2a$10$/.Cpu1uhEzWk8if12wMcKux2tdj6QlaIGSh01wnkJ0JN1DNZWAUWG",
       "name": "Ivo",
       "id": 4
+    },
+    {
+      "email": "mario@abv.bg",
+      "password": "$2a$10$D19N1oXarFJsHEuh/w/aguH/x.wGuTMrK9sRxmhJ5jGhNIsCyATlC",
+      "name": "Mario",
+      "id": 5
     }
   ],
   "places": [
@@ -53,6 +59,30 @@
       "imageUri": "file:///data/user/0/host.exp.exponent/cache/ImagePicker/b308c039-7d3c-4641-9b45-5d4d4f843773.jpeg",
       "address": "10, ulitsa \"Professor Petar Nikov\", Sofia, Sofia City Province, Bulgaria",
       "id": 7
+    },
+    {
+      "title": "nene",
+      "description": "dada",
+      "imageUri": null,
+      "address": "",
+      "coords": {},
+      "id": 8
+    },
+    {
+      "title": "dam",
+      "description": "nem",
+      "imageUri": "file:///data/user/0/host.exp.exponent/cache/ImagePicker/514c5921-114e-48ee-9aed-ef66bd867aab.jpeg",
+      "address": "00, g.k. xxxxx 1, Sofia, Sofia City Province, Bulgaria",
+      "coords": {
+        "accuracy": 19.027000427246094,
+        "longitude": 23,
+        "altitude": 615.5999755859375,
+        "heading": 0,
+        "latitude": 42,
+        "altitudeAccuracy": 3.2776148319244385,
+        "speed": 0
+      },
+      "id": 9
     }
   ]
 }
