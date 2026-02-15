@@ -1,5 +1,6 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import TapGesture from "../screens/TapGesture.jsx";
+import LongPressGesture from "../screens/LongPressGesture.jsx";
 
 
 export default function MainNavigator() {
@@ -7,8 +8,9 @@ export default function MainNavigator() {
 
     return (
         <Drawer.Navigator>
-            
+
             <Drawer.Screen name="TapGesture" component={TapGesture} options={{ title: 'Tap Gesture' }} />
+            <Drawer.Screen name="LongPressGesture" component={LongPressGesture} options={{ title: 'Long Press' }} />
    
         </Drawer.Navigator>
     );
