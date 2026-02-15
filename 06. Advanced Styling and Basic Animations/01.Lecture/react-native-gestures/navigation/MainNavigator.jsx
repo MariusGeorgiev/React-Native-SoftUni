@@ -5,6 +5,7 @@ import FlingGesture from "../screens/FlingGesture.jsx";
 import PanGesture from "../screens/PanGesture.jsx";
 import PitchGesture from "../screens/PitchGesture.jsx";
 import RotateGesture from "../screens/RotateGesture.jsx";
+import AnimatedDemo from "../screens/AnimatedDemo.jsx";
 
 
 export default function MainNavigator() {
@@ -19,6 +20,7 @@ export default function MainNavigator() {
             <Drawer.Screen name="PanGesture" component={PanGesture} options={{ title: 'Pan Gesture' }} />
             <Drawer.Screen name="PitchGesture" component={PitchGesture} options={{ title: 'Pitch Gesture' }} />
             <Drawer.Screen name="RotateGesture" component={RotateGesture} options={{ title: 'Rotate Gesture' }} />
+            <Drawer.Screen name="AnimatedDemo" component={AnimatedDemo} options={{ title: 'Animated Demo' }} />
    
         </Drawer.Navigator>
     );
