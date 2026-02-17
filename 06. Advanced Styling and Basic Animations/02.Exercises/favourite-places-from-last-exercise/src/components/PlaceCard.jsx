@@ -1,14 +1,25 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import Animated from 'react-native-reanimated';
+import { useRef, useEffect } from 'react';
 
 const PlaceCard = ({
     imageUri,
     title,
     address,
-    onPress,
+    // onPress,
+    style = {},
 }) => {
+    // const ref = useRef();
+
+    // useEffect(() => {
+    //     ref.current.measure((x, y, width, height, pageX, pageY) => {
+    //         console.log('Measured:', { x, y, width, height, pageX, pageY });
+    //     })
+    // }, []);
+
     return (
-        <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.8}>
+        <Animated.View style={[styles.container, style]}>
             <View style={styles.imageContainer}>
                 {imageUri ? (
                     <Image source={{ uri: imageUri }} style={styles.image} />
@@ -26,7 +37,8 @@ const PlaceCard = ({
                 </View>
             </View>
             <Ionicons name="chevron-forward" size={20} color="#cbd5e1" />
-        </TouchableOpacity>
+        </Animated.View>
+
     );
 };
 
