@@ -5,6 +5,8 @@ export const PlaceContext = createContext({
     places: [],
     async createPlace(placeData) { },
     getPlaceById(placeId) { },
+    deletePlace(placeId) { },
+    sortPlace(placeId, newIndex) { },
 });
 
 export function PlaceProvider({ children }) {
@@ -30,10 +32,40 @@ export function PlaceProvider({ children }) {
         return places.find(p => p.id === placeId);
     }
 
+    const deletePlace = async (placeId) => {
+        try {
+            await placeService.deletePlace(placeId);
+            setPlaces((oldPlaces) => oldPlaces.filter(place => place.id !== placeId));
+        } catch (err) {
+            console.error('Error deleting place:', err);
+        }
+    }
+
+    const sortPlace = (placeId, newIndex) => {
+        setPlaces((oldPlaces) => {
+            const index = oldPlaces.findIndex(place => place.id === placeId);
+
+            if (index === -1) return oldPlaces;
+
+            if (newIndex < 0 || newIndex >= oldPlaces.length) return oldPlaces;
+
+            const updatedPlaces = [
+                ...oldPlaces.slice(0, index),
+                ...oldPlaces.slice(index + 1),
+            ];
+
+            updatedPlaces.splice(newIndex, 0, oldPlaces[index]);
+
+            return updatedPlaces;
+        });
+    };
+
     const contextValue = {
         places,
         createPlace,
         getPlaceById,
+        deletePlace,
+        sortPlace,
     };
 
     return (
