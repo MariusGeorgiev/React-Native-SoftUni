@@ -67,6 +67,22 @@
         "speed": 0
       },
       "id": 12
+    },
+    {
+      "title": "jvhffb",
+      "description": "hcdbdh",
+      "imageUri": "file:///data/user/0/host.exp.exponent/cache/ImagePicker/08960d9c-7c10-4fb8-930b-de776f11587d.jpeg",
+      "address": "29А, g.k. Lyulin 1, Sofia, Sofia City Province, Bulgaria",
+      "coords": {
+        "accuracy": 17.481000900268555,
+        "longitude": 23.2545309,
+        "altitude": 615.5,
+        "heading": 0,
+        "latitude": 42.7264932,
+        "altitudeAccuracy": 2.5871660709381104,
+        "speed": 0
+      },
+      "id": 13
     }
   ]
 }
