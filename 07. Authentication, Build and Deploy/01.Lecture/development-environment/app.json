@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "development-environment",
+    "name": "Magdana",
     "slug": "development-environment",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -20,7 +20,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.anonymous.developmentenvironment"
     },
     "web": {
       "favicon": "./assets/favicon.png"
