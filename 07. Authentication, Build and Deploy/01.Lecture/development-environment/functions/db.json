@@ -1,0 +1,28 @@
+{
+  "messages": [
+    {
+      "text": "Hi",
+      "sender": "ivo@abv.bg",
+      "timestamp": "2026-02-16T22:32:45.011Z",
+      "id": 1
+    },
+    {
+      "text": "Hi again",
+      "sender": "ivo@abv.bg",
+      "timestamp": "2026-02-16T22:36:12.398Z",
+      "id": 2
+    },
+    {
+      "text": "OOo Ivo, zdr, kpr",
+      "sender": "pesho@abv.bg",
+      "timestamp": "2026-02-16T22:36:58.436Z",
+      "id": 3
+    },
+    {
+      "text": "Ooo\nPepi",
+      "sender": "ivo@abv.bg",
+      "timestamp": "2026-02-16T22:38:00.997Z",
+      "id": 4
+    }
+  ]
+}
